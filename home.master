@@ -1,0 +1,238 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="home.master.cs" Inherits="home" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>ReaL DeaL</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <!-- Required meta tags -->
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+     
+      
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+    
+     <!-- Custom CSS -->
+  
+      <link href="css/custom.css" rel="stylesheet" />
+
+      
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    
+    
+   
+
+    <style>
+
+       .text-white:hover{
+        
+           font-style:italic;
+
+       }
+
+    </style>
+
+
+          
+</head>
+<body id="master">
+   
+    <form id="form1" runat="server">
+
+        <!-- NAVBAR/MENU BAR -->
+        
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color:rgba(255, 255, 255, 0.90);">
+  <a class="navbar-brand" href="home.aspx"><asp:Button ID="Button2" runat="server" Text="ReaL DeaL" Enabled="false" CssClass="btn btn-danger btn-lg" CausesValidation="False" BackColor="Red" /> </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    .
+
+  <div class="collapse navbar-collapse navbar-right" id="navbarSupportedContent" >
+      
+        <asp:TextBox ID="TextBox1" runat="server" class="form-control mr-sm-2" type="search" placeholder="Search Property By Cities" aria-label="Search" Width="210" style="margin-left:40px"></asp:TextBox>&nbsp;
+          <asp:Button ID="Button3" runat="server" Text="Search" class="btn btn-outline-success my-2 my-sm-0" type="submit" CausesValidation="False" OnClick="Button3_Click" />
+    
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+      
+          <a class="nav-link" href="home.aspx" style="margin-left:250px;padding:10px;color:black">Home <span class="sr-only">(current)</span></a>
+      </li>
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding:10px;color:black">
+          Buy
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="buy-flats.aspx">Flats</a>
+          <a class="dropdown-item" href="buy-house.aspx">House</a>
+          <a class="dropdown-item" href="buy-villa.aspx">Villa</a>
+
+          <div class="dropdown-divider"></div>
+             <a class="dropdown-item" href="buy-luxury-house.aspx">Luxury House</a>
+            <a class="dropdown-item" href="buy-budget-deal.aspx">Budget Deal</a>
+        </div>
+      </li>
+      
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding:10px;color:black">
+          Rent
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+         <a class="dropdown-item" href="rent-flats.aspx">Flats</a>
+          <a class="dropdown-item" href="rent-house.aspx">House</a>
+          <a class="dropdown-item" href="rent-villa.aspx">Villa</a>
+          <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="rent-bachelor-friendly.aspx">Bachelor Friendly</a>
+            <a class="dropdown-item" href="rent-budget-deal.aspx">Budget Deal</a>
+        </div>
+      </li>
+
+        <asp:Label ID="Label6" runat="server" Text="Label"><li class="nav-item">
+        <a class="nav-link" href="sell.aspx" style="padding:10px;color:black">Sell</a>
+      </li></asp:Label>  
+
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding:10px;color:black">
+          What's New
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="whats-new-office-space.aspx">Office Space</a>
+          <a class="dropdown-item" href="whats-new-bhk-flats.aspx">BHK Flats</a>
+         
+        </div>
+      </li>
+
+
+        <asp:Label ID="Label1" runat="server" Text="Label" Visible="False" ><li class="nav-item">
+        <a class="nav-link" href="login.aspx" style="padding:10px;color:black">Login/Register</a>
+      </li></asp:Label>
+
+
+        <asp:Label ID="Label2" runat="server" Visible="false" EnableViewState="False">
+             <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding:10px;color:black">
+            Welcome (<asp:Label ID="Label3" runat="server" Text="Label" style="font-size:smaller"></asp:Label>)
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <asp:Label ID="Label4" runat="server" Text="Label" Visible="False"><a class="dropdown-item" href="userpanel.aspx">My Account</a>
+                <asp:Label ID="Label7" runat="server" Text="Label"> <a class="dropdown-item" href="successfully-posted-property.aspx">Posted Property</a></asp:Label>
+             <a class="dropdown-item" href="feedback.aspx">Feedback</a>
+             <a class="dropdown-item" href="report-problem.aspx">Any Problem</a></asp:Label>
+            <asp:Label ID="Label5" runat="server" Text="Label"><a class="dropdown-item" href="adminpanel.aspx">Admin Panel</a></asp:Label>
+          <a class="dropdown-item" style="background-color:white"><asp:Button ID="Button1" runat="server"  CssClass="btn btn-danger" Text="Logout" OnClick="Button1_Click" CausesValidation="False" /></a>
+            
+        </div>
+      </li>
+        </asp:Label>
+
+    </ul>
+    
+  </div>
+</nav>
+
+
+
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+        <br /><br />
+
+        <!--- Footer -->
+        
+            
+                <footer class="jumbotron-fluid" style="background-color:black;text-align:center;padding-bottom:20px;color:white"><br /><br />
+                    <div class="container">
+                 
+                        <div class="row">
+
+                  <div class="col-sm-6"><div class="alert alert-light" role="alert" style="font-size:large;font-weight:600;padding-top:2px;padding-bottom:2px">
+               <span style="color:black;font-size:medium">ReaL DeaL is India's No 1</span></div><span style="font-size:small">Property portal and has been adjudged as the most preferred property site in India, by independent surveys. The portal provides a platform for property buyers and sellers to locate properties of interest and source information on the real estate space in a transparent and unambiguous manner.
+                      </span> <br /><br />
+                      
+
+                      <div class="row">
+                          <div class="col-sm-6"><div class="alert alert-light" role="alert" style="font-size:large;font-weight:600;padding-top:2px;padding-bottom:2px">
+                   <span style="color:black;font-size:small">Contact Us</span></div>
+
+                      <span style="color:#808080;font-size:small">Toll Free :</span> <span  class="text-primary" style="font-size:small">8565 90 7712</span><br />
+                      <span style="color:#808080;font-size:small">Monday - Saturday (9:00AM to 6:00PM IST)</span>
+                      <span style="color:white;font-size:small">Email: </span><a href="mailto:services@realdeal.com" class="text-primary" style="text-decoration:none;font-size:small" >feedback@realdeal.com</a><br />
+                         <br /> </div>
+                            <div class="col-sm-6"><div class="alert alert-light" role="alert" style="font-size:large;font-weight:600;padding-top:2px;padding-bottom:2px">
+                   <span style="color:black;font-size:small">Connect With Us</span></div>
+
+                                <a href="https://www.facebook.com/realdeal"><img src="Images/facebook.png" alt="facebook" width="50" height="50" border="0"/></a>
+                                <a href="https://twitter.com/realdeal"><img src="Images/twitter.png" alt="facebook" width="50" height="50" border="0"/></a>
+                                <a href="https://www.youtube.com/user/realdeal"><img src="Images/youtube.png" alt="facebook" width="50" height="50" border="0"/></a>
+                                <a href="https://plus.google.com/u/0/realdeal"><img src="Images/google.png" alt="facebook" width="50" height="50" border="0"/></a>
+
+                            </div>
+                      </div>
+                  </div>
+
+                   
+
+                             <div class="col-sm-3"><div class="alert alert-light" role="alert" style="font-size:large;font-weight:600;padding-top:2px;padding-bottom:2px">
+                   <span style="color:black;font-size:medium">Our Partners</span></div>
+                               <a href="http://anidl.org" class="text-white" style="text-decoration:none;font-size:small" >AniDL - One Destination for Anime Download</a><br />
+                                 <a href="http://naukari.com" class="text-white" style="text-decoration:none;font-size:small" >Naukri.com - Jobs in India</a><br />
+                                  <a href="http://naukrigulf" class="text-white" style="text-decoration:none;font-size:small" >Naukri.com - Jobs in Middle East</a><br />
+                                  <a href="http://shiksha.com" class="text-white" style="text-decoration:none;font-size:small" >Shiksha.com - Education Career Info</a><br />
+                                  <a href="http://brijj.com" class="text-white" style="text-decoration:none;font-size:small" >Brijj.com - Professional Networking</a><br />
+                                  <a href="http://paisabazaar.com" class="text-white" style="text-decoration:none;font-size:small" >PaisaBazaar.com</a><br />
+                                  <a href="http://ambitionbox.com" class="text-white" style="text-decoration:none;font-size:small" >AmbitionBox.com</a><br /><br />
+                             </div>
+
+                             <div class="col-sm-3"><div class="alert alert-light" role="alert" style="font-size:large;font-weight:600;padding-top:2px;padding-bottom:2px">
+                    <span style="color:black;font-size:medium">Company</span></div>
+ 
+                                 <a href="privacy-policy.aspx" class="text-white" style="text-decoration:none;font-size:small" >Privacy Policy</a><br />
+                                  <a href="about-us.aspx" class="text-white" style="text-decoration:none;font-size:small" >About Us</a><br />
+                                  <a href="terms-condition.aspx" class="text-white" style="text-decoration:none;font-size:small" >Terms and Conditions</a><br />
+                                 <a href="feedback.aspx" class="text-white" style="text-decoration:none;font-size:small" >Feedback</a><br />
+                                 <a href="report-problem.aspx" class="text-white" style="text-decoration:none;font-size:small" >Report Problem</a><br />
+                                 <a href="testimonials.aspx" class="text-white" style="text-decoration:none;font-size:small" >Testimonials</a><br />
+                             </div>
+
+
+                        </div>
+
+                        </div>
+                  
+                    <div class="alert alert-light" role="alert">
+                     <span style="color:black;font-size:small">Disclaimer:-</span><span style="font-size:small">ReaL DeaL Realty Services Limited is only an intermediary offering its platform to facilitate the transactions between Seller and Customer/Buyer/User and is not and cannot be a party to or control in any manner any transactions between the Seller and the Customer/Buyer/User. All the offers and discounts on this Website have been extended by various Builder(s)/Developer(s) who have advertised their products. ReaL DeaL is only communicating the offers and not selling or rendering any of those products or services. It neither warrants nor is it making any representations with respect to offer(s) made on the site. ReaL DeaL Realty Services Limited shall neither be responsible nor liable to mediate or resolve any disputes or disagreements between the Customer/Buyer/User and the Seller and both Seller and Customer/Buyer/User shall settle all such disputes without involving ReaL DeaL Realty Services Limited in any manner.
+                  </span>  </div>
+                    <br />
+<center style="color:white">All trademarks, logos and names are properties of their respective owners. All Rights Reserved. © Copyright 2018 ReaL DeaL Realty Services Limited.</center>
+
+               </footer>
+                
+                 </form>
+ 
+
+    
+ <!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    
+    
+       
+ 
+</body>
+</html>
